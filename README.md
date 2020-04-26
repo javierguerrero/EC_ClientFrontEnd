@@ -1,3 +1,22 @@
+
+Instalar dependencias
+faker
+json-server
+npm-run-all
+
+npm install faker json-server npm-run-all --save-dev
+
+
+https://mherman.org/blog/dockerizing-a-react-app/
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
