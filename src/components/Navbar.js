@@ -7,7 +7,7 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div className="container">
-          <a className="navbar-brand" to="/">
+          <a className="navbar-brand" href="/">
             <img src="http://placehold.it/150x50?text=Logo" alt="" />
           </a>
           <button
@@ -35,7 +35,7 @@ class Navbar extends React.Component {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/lessons">
-                  Lessons
+                  Courses
                 </Link>
               </li>
               <li className="nav-item">
