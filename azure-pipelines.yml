@@ -48,7 +48,7 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'Azure subscription 1(7ae32615-f861-4f5a-9b85-45d1b07d371b)'
+        azureSubscription: '7ae32615-f861-4f5a-9b85-45d1b07d371b'
         appType: 'webAppContainer'
         WebAppName: 'ambartech-demo-react'
         DockerNamespace: '$(containerRegistry)'
