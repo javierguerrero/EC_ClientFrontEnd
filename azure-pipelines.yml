@@ -35,8 +35,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+        tags: $(tag)
 
 - stage: deploy
   displayName: Deploy app to Azure WebApp
