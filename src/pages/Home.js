@@ -5,6 +5,12 @@ export default class Home extends React.Component {
       return (
         <div>
             <h1 class="mt-4">Home</h1>
+            <div>
+              Levels
+              Courses
+              Modules
+              Lessons
+            </div>            
         </div>
       );
     }

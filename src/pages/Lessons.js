@@ -36,14 +36,6 @@ export default class Lessons extends React.Component {
     return (
       <React.Fragment>
         <h1 class="mt-4">Lessons</h1>
-        <div>
-          Levels
-          Courses
-          Modules
-          Lessons
-            
-        </div>
-
         <LessonList lessons={this.state.data} />
       </React.Fragment>
     );
