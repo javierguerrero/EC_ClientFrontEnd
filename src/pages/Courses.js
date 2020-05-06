@@ -1,8 +1,8 @@
 import React from "react";
-import LessonList from '../components/LessonList'
+import CourseList from '../components/CourseList'
 import api from '../api';
 
-export default class Lessons extends React.Component {
+export default class Courses extends React.Component {
   state = {
     loading: true,
     error: null,
@@ -17,7 +17,7 @@ export default class Lessons extends React.Component {
     this.setState({ loading: true, error: null });
 
     try {
-      const data = await api.lessons.list();
+      const data = await api.courses.list();
       this.setState({ loading: false, data: data});
     } catch (error) {
       this.setState({ loading: false, error: error});
@@ -35,8 +35,8 @@ export default class Lessons extends React.Component {
 
     return (
       <React.Fragment>
-        <h1 class="mt-4">Lessons</h1>
-        <LessonList lessons={this.state.data} />
+        <h1 class="mt-4">Courses</h1>
+        <CourseList lessons={this.state.data} />
       </React.Fragment>
     );
   }

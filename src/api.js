@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://jsonplaceholder.typicode.com";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const randomNumber = (min = 0, max = 1) =>
@@ -51,6 +51,11 @@ const api = {
   levels: {
     list() {
       return callApi("/levels");
+    },
+  },
+  courses: {
+    list(){
+      return callApi("/posts?_start=10&_limit=10");
     },
   },
   lessons: {
