@@ -7,7 +7,7 @@ const simulateNetworkLatency = (min = 30, max = 1500) =>
   delay(randomNumber(min, max));
 
 async function callApi(endpoint, options = {}) {
-  await simulateNetworkLatency();
+  //await simulateNetworkLatency();
 
   options.headers = {
     "Content-Type": "application/json",
@@ -48,14 +48,13 @@ const api = {
       });
     },
   },
-  levels: {
-    list() {
-      return callApi("/levels");
-    },
-  },
   courses: {
     list(){
       return callApi("/courses");
+    },
+    read(courseId) {
+      //return callApi(`/courses/${courseId}`);
+      return callApi(`/courses/1`);
     },
   },
   lessons: {
