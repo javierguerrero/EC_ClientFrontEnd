@@ -1,4 +1,4 @@
-const BASE_URL = "https://jsonplaceholder.typicode.com";
+const BASE_URL = "http://k94ey.mocklab.io";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const randomNumber = (min = 0, max = 1) =>
@@ -55,7 +55,7 @@ const api = {
   },
   courses: {
     list(){
-      return callApi("/posts?_start=10&_limit=10");
+      return callApi("/courses");
     },
   },
   lessons: {

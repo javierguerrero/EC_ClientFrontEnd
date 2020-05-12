@@ -7,7 +7,7 @@ class Footer extends React.Component {
         <footer className="footer">
             <div className="container">
                 <span className="text-muted">
-                    {new Date().getFullYear()} <span>Everyday</span><strong>Conversantions</strong>
+                    {new Date().getFullYear()} <span>Everyday Conversantions</span>
                 </span>
             </div>
       </footer>

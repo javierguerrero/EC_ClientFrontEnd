@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './styles/CourseList.css';
 
 class CourseListItem extends React.Component {
   render() {
     return (
       <div className="card">
-        <img src="http://placehold.it/500x260" className="card-img-top" alt=""></img>
+        <Link to={`/courses/${this.props.course.id}`}>
+          <img src="http://placehold.it/500x260" className="card-img-top" alt=""></img>
+        </Link>
         <div className="card-body">
           <h5 className="card-title">{this.props.course.title}</h5>
         </div>
