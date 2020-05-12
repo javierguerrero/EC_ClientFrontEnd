@@ -1,6 +1,7 @@
 import React from 'react';
 import CourseList from '../components/CourseList';
 import PageLoading from '../components/PageLoading';
+import PageError from '../components/PageError';
 import api from '../api';
 
 export default class Home extends React.Component {
@@ -29,13 +30,13 @@ export default class Home extends React.Component {
       return <PageLoading />
     }
 
-    if(this.state.error){
-      return 'Error...';
-    }
+    if(this.state.error) {
+      return <PageError error={this.state.error} />;
+  }
 
     return (
       <React.Fragment>
-          <h1 className="mt-4">Home</h1>
+          <h1 className="mt-4">Everyday Conversations</h1>
           <p>
             Here are some courses we’d like to share that will help you improve your Spoken English
           </p>
@@ -44,11 +45,3 @@ export default class Home extends React.Component {
     );
   }
 }
-  
-
-/*
-Levels
-Courses
-Modules
-Lessons
-*/

@@ -1,4 +1,4 @@
-const BASE_URL = "http://k94ey.mocklab.io";
+const BASE_URL = "https://k94ey.mocklab.io";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const randomNumber = (min = 0, max = 1) =>
