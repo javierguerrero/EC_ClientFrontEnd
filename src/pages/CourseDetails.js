@@ -23,7 +23,10 @@ class CourseDetails extends React.Component {
 
     render(){
         return(
-            <div>{this.props.match.params.courseId}</div>
+            <div>
+                <h1 className="mt-4">Course Name</h1>
+                {this.props.match.params.courseId}
+            </div>
         )
     }
 }

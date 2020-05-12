@@ -7,9 +7,9 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div className="container">
-          <a className="navbar-brand" href="/">
-            <img src="http://placehold.it/150x50?text=Logo" alt="" />
-          </a>
+          <Link className="navbar-brand" to="/">
+            <img src="http://placehold.it/150x50?text=Logo" alt="Logo" />
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -33,7 +33,7 @@ class Navbar extends React.Component {
                   About
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item d-none">
                 <Link className="nav-link" to="/courses">
                   Courses
                 </Link>

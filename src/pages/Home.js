@@ -1,5 +1,6 @@
 import React from 'react';
 import CourseList from '../components/CourseList';
+import PageLoading from '../components/PageLoading';
 import api from '../api';
 
 export default class Home extends React.Component {
@@ -25,7 +26,7 @@ export default class Home extends React.Component {
 
   render() {
     if (this.state.loading === true) {
-      return "Loading...";
+      return <PageLoading />
     }
 
     if(this.state.error){
@@ -35,9 +36,9 @@ export default class Home extends React.Component {
     return (
       <React.Fragment>
           <h1 className="mt-4">Home</h1>
-          <div>
+          <p>
             Here are some courses we’d like to share that will help you improve your Spoken English
-          </div>
+          </p>
           <CourseList courses={this.state.data} />
       </React.Fragment>
     );
