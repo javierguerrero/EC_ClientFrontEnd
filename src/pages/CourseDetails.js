@@ -1,6 +1,4 @@
 import React from 'react';
-import PageLoading from '../components/PageLoading';
-import PageError from '../components/PageError';
 import api from '../api';
 
 import ReactPlayer from "react-player"
@@ -64,14 +62,15 @@ export default function CourseDetails() {
     };
 
     const [course, setCourse] = React.useState({});
-    React.useEffect(async () => {
-        try {
-            const data = await api.courses.read(1);
-            setCourse(data);
-        } catch (error) {
-
-        }
+    const fetchData = async () => {
+        const data = await api.courses.read(1);
+        setCourse(data);
+    };
+    
+    React.useEffect(() => {
+        fetchData();
     }, []);
+
 
     return (
         <div>
