@@ -10,7 +10,7 @@ class CourseListItem extends React.Component {
           <img src="http://placehold.it/500x260" className="card-img-top" alt=""></img>
         </Link>
         <div className="card-body">
-          <h5 className="card-title">{this.props.course.title}</h5>
+          <h5 className="card-title">{this.props.course.name}</h5>
         </div>
 
       </div>

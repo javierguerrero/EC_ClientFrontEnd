@@ -1,4 +1,5 @@
 const BASE_URL = "https://k94ey.mocklab.io";
+//const BASE_URL = "http://localhost:3001";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const randomNumber = (min = 0, max = 1) =>
@@ -53,8 +54,7 @@ const api = {
       return callApi("/courses");
     },
     read(courseId) {
-      //return callApi(`/courses/${courseId}`);
-      return callApi(`/courses/1`);
+      return callApi(`/courses/${courseId}`);
     },
   },
   lessons: {

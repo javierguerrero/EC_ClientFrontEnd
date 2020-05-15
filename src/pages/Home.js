@@ -32,7 +32,7 @@ export default class Home extends React.Component {
 
     if(this.state.error) {
       return <PageError error={this.state.error} />;
-  }
+    }
 
     return (
       <React.Fragment>
