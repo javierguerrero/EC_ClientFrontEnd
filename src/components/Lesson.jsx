@@ -54,61 +54,67 @@ function TabPanel(props) {
 export const Lesson = props => {
     const classes = useStyles();
     const [value, setValue] = useState(0);
-  
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
 
     return (
-        <div>
-            Lesson details
-        </div>
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="simple tabs"
+        >
+          <Tab label="Listening" {...a11yProps(0)} />
+          <Tab label="Speaking" {...a11yProps(1)} />
+          <Tab label="Vocabulary" {...a11yProps(2)} />
+        </Tabs>
+      </AppBar>
+      <TabPanel value={value} index={0}>
+        <ReactPlayer
+          className="react-player"
+          url={props.videoUrl}
+          width="100%"
+          config={{
+            youtube: {
+              playerVars: { showinfo: 0, controls: 2 },
+            },
+          }}
+        />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        {props.dialogues?.length > 0 && (
+          <>
+            <ul>
+              {props.dialogues.map(item => 
+              <li>
+                {item.character} : {item.text}
+              </li>
+              )}
+            </ul>
+          </>
+        )}
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+      {props.vocabulary?.length > 0 && (
+          <>
+            <ul>
+              {props.vocabulary.map(item => 
+              <li>
+                {item.term} : {item.meaning}
+              </li>
+              )}
+            </ul>
+          </>
+        )}
+      </TabPanel>
+    </div>
     )
 }
 
-{/*
-
-
-          <div className={classes.root}>
-            <AppBar position="static">
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                aria-label="simple tabs example"
-              >
-                <Tab label="Listening" {...a11yProps(0)} />
-                <Tab label="Speaking" {...a11yProps(1)} />
-                <Tab label="Vocabulary" {...a11yProps(2)} />
-              </Tabs>
-            </AppBar>
-            <TabPanel value={value} index={0}>
-            
-
-              <ReactPlayer
-                className="react-player"
-                url="https://www.youtube.com/watch?v=ug50zmP9I7s"
-                width="100%"
-                config={{
-                  youtube: {
-                    playerVars: { showinfo: 0, controls: 2 },
-                  },
-                }}
-              />
-
-            
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-              Item Two
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-              Item Three
-            </TabPanel>
-          </div>
 
 
 
 
 
-
-
-*/}

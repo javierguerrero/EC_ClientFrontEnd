@@ -1,5 +1,5 @@
-const BASE_URL = "https://k94ey.mocklab.io";
-//const BASE_URL = "http://localhost:3001";
+//const BASE_URL = "https://k94ey.mocklab.io";
+const BASE_URL = "http://localhost:3001";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const randomNumber = (min = 0, max = 1) =>
@@ -8,7 +8,7 @@ const simulateNetworkLatency = (min = 30, max = 1500) =>
   delay(randomNumber(min, max));
 
 async function callApi(endpoint, options = {}) {
-  //await simulateNetworkLatency();
+  await simulateNetworkLatency();
 
   options.headers = {
     "Content-Type": "application/json",
@@ -23,32 +23,6 @@ async function callApi(endpoint, options = {}) {
 }
 
 const api = {
-  badges: {
-    list() {
-      return callApi("/badges");
-    },
-    create(badge) {
-      return callApi(`/badges`, {
-        method: "POST",
-        body: JSON.stringify(badge),
-      });
-    },
-    read(badgeId) {
-      return callApi(`/badges/${badgeId}`);
-    },
-    update(badgeId, updates) {
-      return callApi(`/badges/${badgeId}`, {
-        method: "PUT",
-        body: JSON.stringify(updates),
-      });
-    },
-    // Lo hubiera llamado `delete`, pero `delete` es un keyword en JavaScript asi que no es buena idea :P
-    remove(badgeId) {
-      return callApi(`/badges/${badgeId}`, {
-        method: "DELETE",
-      });
-    },
-  },
   courses: {
     list(){
       return callApi("/courses");
@@ -58,9 +32,6 @@ const api = {
     },
   },
   lessons: {
-    list() {
-      return callApi("/lessons");
-    },
     read(lessonId) {
       return callApi(`/lessons/${lessonId}`);
     },
