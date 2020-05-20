@@ -1,7 +1,15 @@
-import React from 'react';
+import React from "react";
 
 function About() {
-    return <h1 class="mt-4">About</h1>
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <h1>About</h1>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default About;

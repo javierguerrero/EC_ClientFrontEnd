@@ -1,4 +1,8 @@
 
+Templaes para diseño 
+https://colorlib.com/wp/template/lingua/
+
+
 https://mherman.org/blog/dockerizing-a-react-app/
 Instalar dependencias
 faker
@@ -34,3 +38,4 @@ docker run -it \
 -p 3000:3000 \
 --rm \
 sample:dev
+

@@ -1,8 +1,9 @@
-import React from 'react';
-import CourseList from '../components/CourseList';
-import PageLoading from '../components/PageLoading';
-import PageError from '../components/PageError';
-import api from '../api';
+import React from "react";
+import { CourseList } from "../components/CourseList";
+import WellcomeHome from "../components/WellcomeHome";
+import PageLoading from "../components/PageLoading";
+import PageError from "../components/PageError";
+import api from "../api";
 
 export default class Home extends React.Component {
   state = {
@@ -11,36 +12,33 @@ export default class Home extends React.Component {
     data: undefined,
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.fetchData();
   }
 
   fetchData = async () => {
     this.setState({ loading: true, error: null });
     try {
-      const data = await api.courses.list();
-      this.setState({ loading: false, data: data});
+      const data = await api.courses.popular();
+      this.setState({ loading: false, data: data });
     } catch (error) {
-      this.setState({ loading: false, error: error});
+      this.setState({ loading: false, error: error });
     }
-  }
+  };
 
   render() {
     if (this.state.loading === true) {
-      return <PageLoading />
+      return <PageLoading />;
     }
 
-    if(this.state.error) {
+    if (this.state.error) {
       return <PageError error={this.state.error} />;
     }
 
     return (
       <React.Fragment>
-          <h1 className="mt-4">Everyday Conversations</h1>
-          <p>
-            Here are some courses we’d like to share that will help you improve your Spoken English
-          </p>
-          <CourseList courses={this.state.data} />
+        <WellcomeHome />
+        <CourseList courses={this.state.data} />
       </React.Fragment>
     );
   }

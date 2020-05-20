@@ -1,7 +1,15 @@
-import React from 'react';
+import React from "react";
 
 function Contact() {
-    return <h1 class="mt-4">Contact</h1>
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <h1>Contact</h1>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Contact;

@@ -1,8 +1,8 @@
 import React from "react";
-import CourseList from '../components/CourseList';
-import PageLoading from '../components/PageLoading';
-import PageError from '../components/PageError';
-import api from '../api';
+import { CourseList } from "../components/CourseList";
+import PageLoading from "../components/PageLoading";
+import PageError from "../components/PageError";
+import api from "../api";
 
 export default class Courses extends React.Component {
   state = {
@@ -11,7 +11,7 @@ export default class Courses extends React.Component {
     data: undefined,
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.fetchData();
   }
 
@@ -19,24 +19,30 @@ export default class Courses extends React.Component {
     this.setState({ loading: true, error: null });
     try {
       const data = await api.courses.list();
-      this.setState({ loading: false, data: data});
+      this.setState({ loading: false, data: data });
     } catch (error) {
-      this.setState({ loading: false, error: error});
+      this.setState({ loading: false, error: error });
     }
-  }
+  };
 
   render() {
     if (this.state.loading === true) {
-      return <PageLoading />
+      return <PageLoading />;
     }
 
-    if(this.state.error){
+    if (this.state.error) {
       return <PageError error={this.state.error} />;
     }
 
     return (
       <React.Fragment>
-        <h1 class="mt-4">Courses</h1>
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <h1>Courses</h1>
+            </div>
+          </div>
+        </div>
         <CourseList courses={this.state.data} />
       </React.Fragment>
     );

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import PageLoading from '../components/PageLoading';
 import { Lesson } from '../components/Lesson';
 import { Instructions } from '../components/Instructions';

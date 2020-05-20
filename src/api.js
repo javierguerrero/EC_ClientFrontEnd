@@ -24,6 +24,9 @@ async function callApi(endpoint, options = {}) {
 
 const api = {
   courses: {
+    popular(){
+      return callApi("/popular");
+    },    
     list(){
       return callApi("/courses");
     },
