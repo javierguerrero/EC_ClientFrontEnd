@@ -11,6 +11,7 @@ export const CourseDetails = props => {
   const [showLesson, setShowLesson] = useState(false);
   const [course, setCourse] = useState({});
   const [lesson, setLesson] = useState({});
+  const [activeLink, setActiveLink] = useState(0);
 
   useEffect(() => {
     fetchDataCourse();
@@ -24,10 +25,12 @@ export const CourseDetails = props => {
 
   const fetchDataLesson = async (lessonId) => {
     const data = await api.lessons.read(lessonId);
-
-    debugger
     setLesson(data);
   };
+
+  const handleClick = id => {
+    setActiveLink(id);
+  }
 
   return spinner ? (
       <PageLoading />
@@ -39,10 +42,15 @@ export const CourseDetails = props => {
             {course.lessons?.length > 0 && (
               <>
                 <ul className="list-group">
-                  <li className="list-group-item active"><a onClick={() => setShowLesson(false)}>Instructions</a></li>
+                  <li className={0 === activeLink ? "list-group-item active" : "list-group-item"}>
+                    <a onClick={() => {setShowLesson(false); handleClick(0)}}>Instructions</a>
+                  </li>
                   {course.lessons.map(item => 
-                  <li className="list-group-item">
-                    <a className="nav-link" onClick={() => {setShowLesson(true);fetchDataLesson(item.id)}}>{item.name}</a>
+                  <li className={item.id === activeLink ? "list-group-item active" : "list-group-item"}>
+                    <a className="nav-link" 
+                       onClick={() => {setShowLesson(true);fetchDataLesson(item.id); handleClick(item.id)}}>
+                      {item.name}
+                    </a>
                   </li>
                   )}
                 </ul>

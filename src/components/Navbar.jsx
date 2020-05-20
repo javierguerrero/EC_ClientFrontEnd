@@ -1,15 +1,15 @@
 import React from "react";
 import "./styles/Navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div className="container">
-          <Link className="navbar-brand" to="/">
+          <NavLink className="navbar-brand" to="/">
             <img src="http://placehold.it/150x50?text=Logo" alt="Logo" />
-          </Link>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,25 +23,25 @@ class Navbar extends React.Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
-                <Link className="nav-link" to="/">
-                  Home<span className="sr-only">(current)</span>
-                </Link>
+              <li className="nav-item">
+                <NavLink className="nav-link" exact activeClassName="active" to="/">
+                  Home
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <NavLink className="nav-link"  to="/about">
                   About
-                </Link>
+                </NavLink>
               </li>
-              <li className="nav-item d-none">
-                <Link className="nav-link" to="/courses">
+              <li className="nav-item"> {/* d-none */}
+                <NavLink className="nav-link" to="/courses">
                   Courses
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">
+                <NavLink className="nav-link"  to="/contact">
                   Contact
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>

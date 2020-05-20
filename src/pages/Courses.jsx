@@ -1,5 +1,7 @@
 import React from "react";
-import CourseList from '../components/CourseList'
+import CourseList from '../components/CourseList';
+import PageLoading from '../components/PageLoading';
+import PageError from '../components/PageError';
 import api from '../api';
 
 export default class Courses extends React.Component {
@@ -15,7 +17,6 @@ export default class Courses extends React.Component {
 
   fetchData = async () => {
     this.setState({ loading: true, error: null });
-
     try {
       const data = await api.courses.list();
       this.setState({ loading: false, data: data});
@@ -26,17 +27,17 @@ export default class Courses extends React.Component {
 
   render() {
     if (this.state.loading === true) {
-      return "Loading...";
+      return <PageLoading />
     }
 
     if(this.state.error){
-      return 'Error...';
+      return <PageError error={this.state.error} />;
     }
 
     return (
       <React.Fragment>
         <h1 class="mt-4">Courses</h1>
-        <CourseList lessons={this.state.data} />
+        <CourseList courses={this.state.data} />
       </React.Fragment>
     );
   }
