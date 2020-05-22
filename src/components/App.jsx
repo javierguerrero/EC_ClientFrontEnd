@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Layout from "./Layout";
 import Home from '../pages/Home';
 import Courses from '../pages/Courses';
-import {CourseDetails} from '../pages/CourseDetails';
+import CourseDetails from '../pages/CourseDetails';
 import NotFound from '../pages/NotFound';
 import About from '../pages/About';
 import Contact from '../pages/Contact';

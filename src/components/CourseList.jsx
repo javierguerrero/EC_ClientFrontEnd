@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./styles/CourseList.css";
 
-export const CourseList = (props) => {
+const CourseList = (props) => {
   return (
     <div class="courses">
       <div class="courses_background"></div>
@@ -61,3 +61,5 @@ export const CourseList = (props) => {
     </div>
   );
 };
+
+export default CourseList;

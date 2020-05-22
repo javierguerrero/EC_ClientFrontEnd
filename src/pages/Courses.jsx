@@ -1,10 +1,10 @@
 import React from "react";
-import { CourseList } from "../components/CourseList";
+import CourseList from "../components/CourseList";
 import PageLoading from "../components/PageLoading";
 import PageError from "../components/PageError";
 import api from "../api";
 
-export default class Courses extends React.Component {
+class Courses extends React.Component {
   state = {
     loading: true,
     error: null,
@@ -26,12 +26,14 @@ export default class Courses extends React.Component {
   };
 
   render() {
-    if (this.state.loading === true) {
+    const { loading, error, data } = this.state;
+
+    if (loading === true) {
       return <PageLoading />;
     }
 
     if (this.state.error) {
-      return <PageError error={this.state.error} />;
+      return <PageError error={error} />;
     }
 
     return (
@@ -43,8 +45,10 @@ export default class Courses extends React.Component {
             </div>
           </div>
         </div>
-        <CourseList courses={this.state.data} />
+        <CourseList courses={data} />
       </React.Fragment>
     );
   }
 }
+
+export default Courses;

@@ -1,5 +1,5 @@
 import React from "react";
-import { CourseList } from "../components/CourseList";
+import CourseList from "../components/CourseList";
 import WellcomeHome from "../components/WellcomeHome";
 import PageLoading from "../components/PageLoading";
 import PageError from "../components/PageError";
@@ -37,7 +37,7 @@ export default class Home extends React.Component {
 
     return (
       <React.Fragment>
-        <WellcomeHome />
+        <WellcomeHome title="Learn English Easily" />
         <CourseList courses={this.state.data} />
       </React.Fragment>
     );

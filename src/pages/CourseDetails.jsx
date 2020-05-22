@@ -5,7 +5,7 @@ import { Instructions } from "../components/Instructions";
 import api from "../api";
 import "./styles/CourseDetails.css";
 
-export const CourseDetails = (props) => {
+const CourseDetails = (props) => {
   const [spinner, setSpinner] = useState(true);
   const [showLesson, setShowLesson] = useState(false);
   const [course, setCourse] = useState({});
@@ -101,3 +101,5 @@ export const CourseDetails = (props) => {
     </>
   );
 };
+
+export default CourseDetails;
