@@ -1,6 +1,5 @@
 
-Templaes para diseño 
-https://colorlib.com/wp/template/lingua/
+
 
 
 https://mherman.org/blog/dockerizing-a-react-app/
@@ -38,4 +37,16 @@ docker run -it \
 -p 3000:3000 \
 --rm \
 sample:dev
+
+
+## Crear proyectos React
+https://github.com/facebook/create-react-app
+
+
+
+
+## Uso de SASS
+```
+npm install mini-css-extract-plugin css-loader node-sass sass-loader --save-dev
+```
 
