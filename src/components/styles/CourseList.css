@@ -1,6 +1,5 @@
-.course_col
-{
-	margin-bottom: 30px;
+.course_col {
+  margin-bottom: 30px;
 }
 
 .courses_background {
@@ -12,7 +11,7 @@
   background: #f8f8f8;
 }
 .courses_row {
-  margin-top: 54px;
+  /*margin-top: 54px;*/
 }
 .course {
   border: solid 1px #f1f1f1;

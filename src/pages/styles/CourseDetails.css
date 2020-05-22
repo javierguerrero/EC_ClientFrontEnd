@@ -1,3 +1,11 @@
+.list-group .list-group-item.active {
+    background-color: #2e21df;
+    border-color: #2e21df;
+}
+
 .list-group-item .nav-link {
     padding: 0;
+    cursor: pointer;
 }
+
+

@@ -25,7 +25,7 @@ export const CourseList = (props) => {
                     <div class="course_info">
                       <ul>
                         <li>
-                          <a href="instructors.html">Sarah Parker</a>
+                          <a href="#">Beginner</a>
                         </li>
                         <li>
                           <a href="#">English</a>

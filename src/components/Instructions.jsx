@@ -4,8 +4,6 @@ import "./styles/Instructions.css";
 export const Instructions = props => {
     return (
         <div>
-            <h2 className="mt-4">Instructions</h2>
-
             <ul>
                 <li>Day 1. Watch 2-3 minutes scene with English subtitles. Do it 4-5 times for this day.</li>
                 <li>Day 2. Watch the same scene without subtitles.  Watch the scene 4-5 times.</li>

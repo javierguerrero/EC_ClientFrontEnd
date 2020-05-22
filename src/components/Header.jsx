@@ -6,8 +6,7 @@ import "./styles/Header.css";
 export const Header = (props) => {
   return (
     <React.Fragment>
-      <header class="header">
-        <TopBar />
+      <header className="header">
         <HeaderContent />
       </header>
     </React.Fragment>

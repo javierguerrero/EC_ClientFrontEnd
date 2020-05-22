@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import PageLoading from '../components/PageLoading';
-import { Lesson } from '../components/Lesson';
-import { Instructions } from '../components/Instructions';
+import PageLoading from "../components/PageLoading";
+import { LessonContent } from "../components/LessonContent";
+import { Instructions } from "../components/Instructions";
 import api from "../api";
 import "./styles/CourseDetails.css";
 
-export const CourseDetails = props => {
+export const CourseDetails = (props) => {
   const [spinner, setSpinner] = useState(true);
   const [showLesson, setShowLesson] = useState(false);
   const [course, setCourse] = useState({});
@@ -27,50 +27,77 @@ export const CourseDetails = props => {
     setLesson(data);
   };
 
-  const handleClick = id => {
+  const handleClick = (id) => {
     setActiveLink(id);
-  }
+  };
 
   return spinner ? (
-      <PageLoading />
-    ) : (
-      <>
-      <h1 className="mt-4">{course.name}</h1>
-      <div className="row">
-        <div className="col-md-3">
+    <PageLoading />
+  ) : (
+    <>
+      <div className="container">
+        <h1>{course.name}</h1>
+        <div className="row">
+          <div className="col-md-3">
             {course.lessons?.length > 0 && (
               <>
                 <ul className="list-group">
-                  <li className={0 === activeLink ? "list-group-item active" : "list-group-item"}>
-                    <a onClick={() => {setShowLesson(false); handleClick(0)}}>Instructions</a>
-                  </li>
-                  {course.lessons.map(item => 
-                  <li className={item.id === activeLink ? "list-group-item active" : "list-group-item"}>
-                    <a className="nav-link" 
-                       onClick={() => {setShowLesson(true);fetchDataLesson(item.id); handleClick(item.id)}}>
-                      {item.name}
+                  <li
+                    className={
+                      0 === activeLink
+                        ? "list-group-item active"
+                        : "list-group-item"
+                    }
+                  >
+                    <a
+                      className="nav-link"
+                      onClick={() => {
+                        setShowLesson(false);
+                        handleClick(0);
+                      }}
+                    >
+                      Instructions
                     </a>
                   </li>
-                  )}
+                  {course.lessons.map((item) => (
+                    <li
+                      className={
+                        item.id === activeLink
+                          ? "list-group-item active"
+                          : "list-group-item"
+                      }
+                    >
+                      <a
+                        className="nav-link"
+                        onClick={() => {
+                          setShowLesson(true);
+                          fetchDataLesson(item.id);
+                          handleClick(item.id);
+                        }}
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </>
             )}
-        </div>
-
-        <div className="col-md-9">
-          <div className={!showLesson ? 'd-block': 'd-none' }>
-            <Instructions />  
           </div>
-          <div className={showLesson ? 'd-block': 'd-none' }>
-            <Lesson
-              videoUrl={lesson.videoUrl || ''}
-              dialogues={lesson.dialogues || []}
-              vocabulary={lesson.vocabulary || []}
-            />
 
+          <div className="col-md-9">
+            <div className={!showLesson ? "d-block" : "d-none"}>
+              <Instructions />
+            </div>
+            <div className={showLesson ? "d-block" : "d-none"}>
+              <LessonContent
+                videoUrl={lesson.videoUrl || ""}
+                dialogues={lesson.dialogues || []}
+                vocabulary={lesson.vocabulary || []}
+              />
+            </div>
           </div>
         </div>
       </div>
-      </>
-    )
-}
+    </>
+  );
+};

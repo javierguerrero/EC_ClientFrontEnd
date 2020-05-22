@@ -51,7 +51,7 @@ function TabPanel(props) {
   }));
 
 
-export const Lesson = props => {
+export const LessonContent = props => {
     const classes = useStyles();
     const [value, setValue] = useState(0);
     const handleChange = (event, newValue) => {

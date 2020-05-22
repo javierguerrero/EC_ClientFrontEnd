@@ -2,7 +2,7 @@
     "popular": [
         {
             "id": "abad",
-            "name": "beginners",
+            "name": "Introductions and small talk",
             "lessons": [
                 {
                     "id": 1,
@@ -20,17 +20,17 @@
         },
         {
             "id": "efasd",
-            "name": "Obama interviews"
+            "name": "Around town"
         },
         {
             "id": "ee",
-            "name": "upper intermediate"
+            "name": "Pastimes and activities"
         }          
     ],    
     "courses": [
         {
             "id": "abad",
-            "name": "beginners",
+            "name": "Introductions and small talk",
             "lessons": [
                 {
                     "id": 1,
@@ -48,11 +48,11 @@
         },
         {
             "id": "efasd",
-            "name": "Obama interviews"
+            "name": "Around town"
         },
         {
             "id": "ee",
-            "name": "upper intermediate"
+            "name": "Pastimes and activities"
         },
         {
             "id": "eafda3g",
